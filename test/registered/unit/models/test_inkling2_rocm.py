@@ -7,7 +7,7 @@ import torch
 from sglang.test.ci.ci_register import register_amd_ci
 
 # backend-specific: the ROCm kernels and dispatch Inkling2 runs on MI35x
-register_amd_ci(est_time=170, stage="stage-b", runner_config="1-gpu-small-amd-mi35x")
+register_amd_ci(est_time=170, stage="base-b", runner_config="1-gpu-small-amd-mi35x")
 
 pytestmark = pytest.mark.skipif(
     not torch.cuda.is_available() or torch.version.hip is None,
